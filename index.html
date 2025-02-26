@@ -1,1 +1,134 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expiry Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th input {
+            width: 100%;
+            padding: 5px;
+        }
+        .pagination {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .pagination button {
+            padding: 8px;
+            margin: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Expiry Report</h2>
+
+    <table id="expiryTable">
+        <thead>
+            <tr>
+                <th><input type="text" placeholder="Search CI" onkeyup="searchTable(0)"></th>
+                <th><input type="text" placeholder="Search CN" onkeyup="searchTable(1)"></th>
+                <th><input type="text" placeholder="Search Email" onkeyup="searchTable(2)"></th>
+                <th><input type="text" placeholder="Search Expiry Date" onkeyup="searchTable(3)"></th>
+                <th><input type="text" placeholder="Search Days" onkeyup="searchTable(4)"></th>
+                <th><input type="text" placeholder="Search Status" onkeyup="searchTable(5)"></th>
+            </tr>
+            <tr>
+                <th>CI</th>
+                <th>Common Name (CN)</th>
+                <th>Email</th>
+                <th>Expiry Date</th>
+                <th>Days</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td>CI123</td>
+                <td>example.com</td>
+                <td>user@example.com</td>
+                <td>Jun 10 03:00:00 2025 GMT</td>
+                <td>45</td>
+                <td><img src="https://img.shields.io/badge/OK-brightgreen" alt="OK"></td>
+            </tr>
+            <tr>
+                <td>CI456</td>
+                <td>testsite.net</td>
+                <td>admin@testsite.net</td>
+                <td>Mar 15 12:30:00 2025 GMT</td>
+                <td>20</td>
+                <td><img src="https://img.shields.io/badge/CRITICAL-orange" alt="CRITICAL"></td>
+            </tr>
+            <tr>
+                <td>CI789</td>
+                <td>expiredcert.org</td>
+                <td>security@expiredcert.org</td>
+                <td>Jan 01 00:00:00 2024 GMT</td>
+                <td>0</td>
+                <td><img src="https://img.shields.io/badge/EXPIRED-red" alt="EXPIRED"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button onclick="prevPage()">Prev</button>
+        <span id="pageNumber">Page 1</span>
+        <button onclick="nextPage()">Next</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const rowsPerPage = 2;
+        const table = document.getElementById("expiryTable");
+        const tbody = document.getElementById("tableBody");
+        const rows = Array.from(tbody.rows);
+
+        function displayTable() {
+            rows.forEach((row, index) => {
+                row.style.display = (index >= (currentPage - 1) * rowsPerPage && index < currentPage * rowsPerPage) ? "" : "none";
+            });
+            document.getElementById("pageNumber").innerText = `Page ${currentPage}`;
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayTable();
+            }
+        }
+
+        function nextPage() {
+            if (currentPage * rowsPerPage < rows.length) {
+                currentPage++;
+                displayTable();
+            }
+        }
+
+        function searchTable(columnIndex) {
+            const input = table.getElementsByTagName("input")[columnIndex].value.toLowerCase();
+            rows.forEach(row => {
+                const cellText = row.cells[columnIndex].textContent.toLowerCase();
+                row.style.display = cellText.includes(input) ? "" : "none";
+            });
+        }
+
+        displayTable();
+    </script>
+
+</body>
+</html>
