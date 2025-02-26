@@ -1,0 +1,26 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Runs when code is pushed to main branch
+
+permissions:
+  pages: write  # Required for GitHub Pages
+  id-token: write  # Auth for deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Fetch the latest code
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .  # Uploads everything, including index.html
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
