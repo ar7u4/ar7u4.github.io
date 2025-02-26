@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const table = new DataTable('#certTable', {
                 data: data,
                 columns: [
+                    { data: 'environment', title: "Environment" },
                     { data: 'ci' },
                     { data: 'CN' },
                     { data: 'email' },
