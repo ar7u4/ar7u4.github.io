@@ -7,7 +7,7 @@
         "email": "gbgycsqr@test.com.pf",
         "ci": "CM57204",
         "days": 279,
-        "badge": "https://img.shields.io/badge/WARN-brightgreen"
+        "badge": "https://img.shields.io/badge/EXPIRED-red"
     },
     {
         "status": "OK",

@@ -1,0 +1,140 @@
+/* Commonwealth Bank of Australia Theme */
+
+/* Primary Theme Colors */
+:root {
+    --cba-yellow: #FFCC00;
+    --cba-black: #000000;
+    --cba-gray: #f5f5f5;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--cba-gray);
+    line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+h1 {
+    color: var(--cba-black);
+    margin-bottom: 30px;
+    font-weight: 500;
+    border-bottom: 4px solid var(--cba-yellow);
+    padding-bottom: 10px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+/* Table Header */
+thead th {
+    background-color: var(--cba-black);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Table Header Search Input */
+th input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+th input:focus {
+    border-color: var(--cba-yellow);
+    outline: none;
+}
+
+/* Table Body */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: var(--cba-gray);
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Search & Sort Button Styling */
+.sort-btn {
+    background-color: var(--cba-yellow);
+    color: var(--cba-black);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.sort-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Center Remaining Days Column */
+.dt-center {
+    text-align: center;
+}
+
+/* Status Colors */
+.status-active {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.status-expiring {
+    color: #e67e22;
+    font-weight: 500;
+}
+
+.status-expired {
+    color: #c0392b;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    thead th, tbody td {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
