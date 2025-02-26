@@ -1,50 +1,41 @@
-/* Commonwealth Bank of Australia Theme */
-
-/* Primary Theme Colors */
-:root {
-    --cba-yellow: #FFCC00;
-    --cba-black: #000000;
-    --cba-gray: #f5f5f5;
-}
-
-/* Body Styling */
+/* Reset default styles and set base font */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: var(--cba-gray);
+    background-color: #f8f9fa; /* Light gray background, subtle and professional */
     line-height: 1.6;
 }
 
-/* Container Styling */
+/* Container styling */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #ffffff; /* White background for contrast */
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 38, 100, 0.1); /* Subtle shadow with navy-inspired tone */
 }
 
-/* Header Styling */
+/* Heading styling */
 h1 {
-    color: var(--cba-black);
+    color: #002664; /* CBA navy blue for headings */
     margin-bottom: 30px;
     font-weight: 500;
-    border-bottom: 4px solid var(--cba-yellow);
+    border-bottom: 2px solid #FFD700; /* CBA gold for accent */
     padding-bottom: 10px;
 }
 
-/* Table Styling */
+/* Table styling */
 table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
 }
 
-/* Table Header */
+/* Table header styling */
 thead th {
-    background-color: var(--cba-black);
+    background-color: #002664; /* CBA navy blue for headers */
     color: white;
     padding: 12px;
     text-align: left;
@@ -52,7 +43,13 @@ thead th {
     position: relative;
 }
 
-/* Table Header Search Input */
+/* Table header input and sort button container */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 th input {
     width: 100%;
     padding: 8px;
@@ -61,31 +58,20 @@ th input {
     border-radius: 4px;
     font-size: 14px;
     transition: border-color 0.3s ease;
+    background-color: #ffffff; /* White background for inputs */
+    color: #002664; /* Navy text for inputs */
+    flex: 1;
 }
 
 th input:focus {
-    border-color: var(--cba-yellow);
+    border-color: #FFD700; /* Gold border on focus for CBA-inspired accent */
     outline: none;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); /* Subtle gold glow */
 }
 
-/* Table Body */
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: var(--cba-gray);
-}
-
-tbody td {
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-}
-
-/* Search & Sort Button Styling */
 .sort-btn {
-    background-color: var(--cba-yellow);
-    color: var(--cba-black);
+    background-color: #FFD700; /* CBA gold for sort buttons */
+    color: #002664; /* Navy text for contrast */
     border: none;
     border-radius: 4px;
     padding: 5px 8px;
@@ -96,45 +82,87 @@ tbody td {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .sort-btn:hover {
-    background-color: #e6b800;
+    background-color: #e6c200; /* Slightly darker gold on hover */
+    transform: scale(1.1); /* Slight scale for interactive feedback */
 }
 
-/* Center Remaining Days Column */
-.dt-center {
-    text-align: center;
+/* Table body styling */
+tbody tr {
+    transition: background-color 0.2s ease;
 }
 
-/* Status Colors */
-.status-active {
-    color: #27ae60;
-    font-weight: 500;
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Light gray for even rows, matching body background */
 }
 
-.status-expiring {
-    color: #e67e22;
-    font-weight: 500;
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
 }
 
-.status-expired {
-    color: #c0392b;
-    font-weight: 500;
+tbody tr:hover {
+    background-color: #e9ecef; /* Light gray hover for better visibility */
 }
 
-/* Responsive */
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6; /* Subtle gray border for separation */
+}
+
+/* Image styling */
+img {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
     }
 
-    thead th, tbody td {
+    thead th,
+    tbody td {
         padding: 8px;
     }
 
     h1 {
         font-size: 24px;
     }
+
+    .sort-btn {
+        padding: 4px 6px;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+}
+
+/* Custom status colors (if you're showing status indicators) */
+.status-active, .status-ok {
+    color: #27ae60; /* Green for "OK" status */
+    font-weight: 500;
+}
+
+.status-expiring, .status-warn {
+    color: #e67e22; /* Orange for "WARN" status */
+    font-weight: 500;
+}
+
+.status-expired {
+    color: #c0392b; /* Red for "EXPIRED" status */
+    font-weight: 500;
+}
+
+/* Center "Remaining Days" column */
+.dt-center {
+    text-align: center;
+}
+
+thead th.dt-center {
+    text-align: center;
 }
