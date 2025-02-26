@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App"; // Ensure correct casing
+import App from "./app"; // Ensure correct casing
 
 ReactDOM.render(
   <React.StrictMode>
