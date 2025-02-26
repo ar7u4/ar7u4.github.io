@@ -1,7 +1,7 @@
 import React from "react";
 import TableWithSearch from "./TableWithSearch";
 
-function App() {
+function app() {
   return (
     <div>
       <TableWithSearch />
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default app;
