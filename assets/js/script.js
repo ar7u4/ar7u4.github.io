@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ],
                 ordering: true,
                 order: [],
-                searching: false,
+                searching: true,
                 autoWidth: false,
                 initComplete: function () {
                     let api = this.api();
