@@ -1,9 +1,9 @@
 import React from "react";
-import TableWithSearch from "./components/TableWithSearch";
+import TableWithSearch from "./TableWithSearch";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <TableWithSearch />
     </div>
   );
