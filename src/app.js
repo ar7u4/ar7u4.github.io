@@ -1,5 +1,5 @@
 import React from "react";
-import TableWithSearch from "./TableWithSearch";
+import TableWithSearch from "./components/TableWithSearch";
 
 function app() {
   return (
