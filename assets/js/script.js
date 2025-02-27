@@ -12,10 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     { data: 'expiry', title: "Expiry" },
                     { data: 'days', title: "Remaining Days", className: 'dt-center' },
                     {
-                        data: 'badge',
+                        data: 'status',
                         title: "Status",
-                        render: data => `<img src="${data}" alt="status badge">`
+                        render: function (data, type, row) {
+                            return `<span class="status-${data.toLowerCase()}">${data}</span>`; // Add a CSS class
+                        }
                     }
+
                 ],
                 ordering: true,
                 order: [],
@@ -24,12 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 initComplete: function () {
                     let api = this.api();
 
-                    // Add search input fields to table headers
                     $('#certTable thead th').each(function (index) {
                         let title = $(this).text();
 
                         if (title === "Environment") {
-                            // Replace text input with a dropdown for the "Environment" column
                             $(this).html(`
                                 <select>
                                     <option value="">All</option>
@@ -39,17 +40,52 @@ document.addEventListener('DOMContentLoaded', function () {
                             `);
 
                             $('select', this).on('change', function (e) {
-                                e.stopPropagation(); // Prevent sorting when changing dropdown
-
+                                e.stopPropagation();
                                 let value = this.value;
-                                if (value) {
-                                    api.column(index).search(`^${value}$`, true, false).draw(); // Exact match search
+                                api.column(index).search(value ? `^${value}$` : '', true, false).draw(); // Exact match
+                            });
+                        }
+                        else if (title === "Remaining Days") {
+                            $(this).html(`
+                                <select>
+                                    <option value="">All</option>
+                                    <option value="week">This Week (≤7 days)</option>
+                                    <option value="month">This Month (≤30 days)</option>
+                                </select>
+                            `);
+
+                            $('select', this).on('change', function (e) {
+                                e.stopPropagation();
+                                let value = this.value;
+
+                                if (value === "week") {
+                                    api.column(index).search('^([0-7])$', true, false).draw();
+                                } else if (value === "month") {
+                                    api.column(index).search('^(?:[0-9]|[12][0-9]|30)$', true, false).draw();
                                 } else {
-                                    api.column(index).search('', false, false).draw(); // Reset search when "All" is selected
+                                    api.column(index).search('', false, false).draw();
                                 }
                             });
-                        } else {
-                            // Add text input for other columns
+                        }
+                        else if (title === "Status") {
+                            $(this).html(`
+                                <select>
+                                    <option value="">All</option>
+                                    <option value="OK">OK</option>
+                                    <option value="WARN">Warn</option>
+                                    <option value="CRITICAL">Critical</option>
+                                    <option value="EXPIRED">Expired</option>
+                                </select>
+                            `);
+
+                            $('select', this).on('change', function (e) {
+                                e.stopPropagation();
+                                let value = this.value.toUpperCase().trim(); // Normalize input
+
+                                api.column(index).search(value ? `^${value}$` : '', true, false).draw(); // Exact match
+                            });
+                        }
+                        else {
                             $(this).html(`<input type="text" placeholder="${title}" />`);
 
                             $('input', this).on('keyup change', function (e) {
@@ -58,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
                         }
 
-                        // Prevent sorting when clicking inside search fields
                         $('input, select', this).on('click', function (e) {
                             e.stopPropagation();
                         });
