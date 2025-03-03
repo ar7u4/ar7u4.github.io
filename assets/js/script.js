@@ -2,8 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('data/data.json')
         .then(response => response.json())
         .then(data => {
+            // Extract last_updated from the root of the JSON
+            const lastUpdated = data.last_updated || new Date().toLocaleString();
+            document.getElementById('lastUpdated').textContent = `Last Updated: ${lastUpdated}`;
+
+            // Ensure data is an array (handle the new structure)
+            const tableData = Array.isArray(data) ? data : data.data || data;
+
             const table = new DataTable('#certTable', {
-                data: data,
+                data: tableData,
                 columns: [
                     { data: 'environment', title: "Environment" },
                     { data: 'ci', title: "CI" },
@@ -15,15 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         data: 'status',
                         title: "Status",
                         render: function (data, type, row) {
-                            return `<span class="status-${data.toLowerCase()}">${data}</span>`; // Add a CSS class
+                            return `<span class="status-${data.toLowerCase()}">${data}</span>`;
                         }
                     }
-
                 ],
                 ordering: true,
                 order: [],
                 searching: true,
                 autoWidth: false,
+                lengthMenu: [10, 20, 30, 50, 100],
+                dom: 'lfrtip',
                 initComplete: function () {
                     let api = this.api();
 
@@ -42,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             $('select', this).on('change', function (e) {
                                 e.stopPropagation();
                                 let value = this.value;
-                                api.column(index).search(value ? `^${value}$` : '', true, false).draw(); // Exact match
+                                api.column(index).search(value ? `^${value}$` : '', true, false).draw();
                             });
                         }
                         else if (title === "Remaining Days") {
@@ -80,13 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             $('select', this).on('change', function (e) {
                                 e.stopPropagation();
-                                let value = this.value.toUpperCase().trim(); // Normalize input
-
-                                api.column(index).search(value ? `^${value}$` : '', true, false).draw(); // Exact match
+                                let value = this.value.toUpperCase().trim();
+                                api.column(index).search(value ? `^${value}$` : '', true, false).draw();
                             });
                         }
                         else {
-                            $(this).html(`<input type="text" placeholder="${title}" />`);
+                            $(this).html(`<input type="text" placeholder="Search ${title}" />`);
 
                             $('input', this).on('keyup change', function (e) {
                                 e.stopPropagation();
@@ -97,6 +104,24 @@ document.addEventListener('DOMContentLoaded', function () {
                         $('input, select', this).on('click', function (e) {
                             e.stopPropagation();
                         });
+                    });
+
+                    // Initialize export button in header
+                    $('.export-btn').on('click', function () {
+                        let exportData = table.rows({ search: 'applied' }).data().toArray();
+                        let logContent = exportData.map(row => {
+                            const timestamp = new Date().toISOString().split('T')[0] + ' 00:00:00';
+                            const logLevel = row.status === 'CRITICAL' ? 'CRITICAL' : 'INFO';
+                            return `${timestamp};LOG_LEVEL=${logLevel};ENV=${row.environment || ''};status=${row.status || ''};CN=${row.CN || ''};expiry=${row.expiry || ''};remaining_days=${row.days || ''};email='${row.email || ''}';ci=${row.ci || ''}`;
+                        }).join('\n');
+
+                        let blob = new Blob([logContent], { type: 'text/plain' });
+                        let url = window.URL.createObjectURL(blob);
+                        let a = document.createElement('a');
+                        a.href = url;
+                        a.download = `certificate_export_${new Date().toISOString().split('T')[0]}.log`;
+                        a.click();
+                        window.URL.revokeObjectURL(url);
                     });
                 }
             });
