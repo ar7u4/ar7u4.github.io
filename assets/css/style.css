@@ -14,7 +14,7 @@
 } */
 
 body {
-    font-family: 'CBABeaconSans', Helvetica, Arial, sans-serif; /* Fallback until CBABeaconSans is available */
+    font-family: 'CBABeaconSans', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 20px 0;
     background-color: #F7F9FC;
@@ -104,7 +104,7 @@ h1 {
 
 @media (max-width: 768px) {
     .header-timestamp {
-        display: none; /* Hide on mobile to avoid clutter */
+        display: none;
     }
 }
 
@@ -167,7 +167,7 @@ table {
 .dataTables_wrapper .dataTables_info {
     padding: 10px 0;
     font-size: 14px;
-    color: #4A4A4A; /* Medium gray for table content */
+    color: #4A4A4A;
 }
 
 /* Table Header Styling */
@@ -257,7 +257,7 @@ tbody td {
     border-bottom: 1px solid #D0D5DD;
     font-size: 15px;
     font-weight: 500;
-    color: #1f1e1e; /* Medium gray between black and gray */
+    color: #4A4A4A;
     line-height: 1.5;
 }
 
@@ -293,6 +293,15 @@ tbody td {
     display: inline-block;
     padding: 4px 12px;
     background-color: #D32F2F;
+    color: #FFFFFF;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.status-fatal {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #B22222; /* FireBrick for FATAL */
     color: #FFFFFF;
     border-radius: 12px;
     font-weight: 500;
