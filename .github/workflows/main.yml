@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Change this to your default branch if it's not 'main'
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,13 +16,16 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 18 # Use the Node.js version compatible with your project
+        node-version: 18
 
     - name: Install dependencies
       run: npm install
 
     - name: Build the project
       run: npm run build
+
+    - name: List build directory (debug)
+      run: ls -la build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
