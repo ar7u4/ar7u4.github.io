@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.ca17d814.css","mappings":"AAAA,KAII,wBAAyB,CAHzB,4BAA8B,CAC9B,QAAS,CACT,SAEJ","sources":["index.css"],"sourcesContent":["body {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n    background-color: #f8f9fa;\n}\n"],"names":[],"sourceRoot":""}
