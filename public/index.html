@@ -1,12 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dream11 Team Generator</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjunkumar Betageri</title>
+    <meta name="description" content="Senior Platform Engineer | CKA | Building cloud-native infrastructure, internal platforms, and DevOps tooling.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-terminal"></i>
+                <span>arjun.betageri</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="#projects" class="nav-link">projects</a></li>
+                <li><a href="#experience" class="nav-link">experience</a></li>
+                <li><a href="#stack" class="nav-link">stack</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-avatar">
+                <div class="avatar-ring">
+                    <span class="avatar-letter">A</span>
+                </div>
+                <div class="status-indicator" title="Open to opportunities"></div>
+            </div>
+            <h1 class="hero-name">Arjunkumar Betageri</h1>
+            <p class="hero-handle">@arjunkumar-betageri · Bengaluru, India</p>
+            <p class="hero-bio">
+                Senior Platform Engineer building multi-tenant internal platforms, Kafka-as-a-Service,
+                and container orchestration at scale. CKA certified. 7+ years across AWS, Azure, Kubernetes,
+                Terraform, and GitOps.
+            </p>
+            <div class="hero-meta">
+                <span class="meta-item"><i class="fas fa-building"></i> Commonwealth Bank of Australia</span>
+                <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru</span>
+                <span class="meta-item"><i class="fas fa-link"></i> <a href="mailto:arjun.betageri@live.com">arjun.betageri@live.com</a></span>
+                <span class="meta-item"><i class="fas fa-users"></i> <strong>1,000+</strong> teams enabled</span>
+            </div>
+            <div class="hero-actions">
+                <a href="mailto:arjun.betageri@live.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+                <a href="https://linkedin.com/in/arjunkumar-betageri" target="_blank" class="btn btn-ghost">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            <div class="hero-stats-row">
+                <div class="hstat">
+                    <span class="hstat-num">7+</span>
+                    <span class="hstat-label">years</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num">5</span>
+                    <span class="hstat-label">companies</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num">CKA</span>
+                    <span class="hstat-label">certified</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num">45%</span>
+                    <span class="hstat-label">onboarding cut</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-folder-open"></i> Projects</h2>
+                <span class="section-link">Selected work and impact</span>
+            </div>
+            <div class="repo-grid">
+                <!-- Project 1: Kafka-as-a-Service -->
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-database"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">kafka-as-a-service</h3>
+                            <span class="repo-visibility public">Internal</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        Multi-tenant internal platform for automated Kafka topic provisioning, ACL management,
+                        and schema validation across hybrid cloud. Powers 1,000+ internal teams.
+                    </p>
+                    <div class="repo-footer">
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#7B42BC"></span>
+                            <span>Terraform</span>
+                        </div>
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#3776AB"></span>
+                            <span>Python</span>
+                        </div>
+                        <div class="repo-meta">
+                            <span><i class="fas fa-star"></i> —</span>
+                            <span><i class="fas fa-code-branch"></i> —</span>
+                        </div>
+                    </div>
+                    <div class="repo-tags">
+                        <span class="rtag">EKS</span>
+                        <span class="rtag">Kafka</span>
+                        <span class="rtag">GitHub Actions</span>
+                        <span class="rtag">AI Agent</span>
+                    </div>
+                </article>
+
+                <!-- Project 2: Container-as-a-Service -->
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-cubes"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">container-platform</h3>
+                            <span class="repo-visibility public">Internal</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        Multi-tenant CaaS on Amazon EKS with automated tenant onboarding, namespace isolation,
+                        NetworkPolicies, and resource quotas. Self-service developer experience.
+                    </p>
+                    <div class="repo-footer">
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#326CE5"></span>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#7B42BC"></span>
+                            <span>Terraform</span>
+                        </div>
+                        <div class="repo-meta">
+                            <span><i class="fas fa-star"></i> —</span>
+                            <span><i class="fas fa-code-branch"></i> —</span>
+                        </div>
+                    </div>
+                    <div class="repo-tags">
+                        <span class="rtag">EKS</span>
+                        <span class="rtag">Istio</span>
+                        <span class="rtag">Helm</span>
+                        <span class="rtag">ArgoCD</span>
+                    </div>
+                </article>
+
+                <!-- Project 3: AI Ops Chat Agent -->
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-robot"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">ops-chat-agent</h3>
+                            <span class="repo-visibility public">Internal</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        Natural language AI agent integrated with internal platforms. Teams query Kafka status,
+                        request ACL changes, validate schemas, and get operational recommendations via chat.
+                    </p>
+                    <div class="repo-footer">
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#3776AB"></span>
+                            <span>Python</span>
+                        </div>
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#2496ED"></span>
+                            <span>FastAPI</span>
+                        </div>
+                        <div class="repo-meta">
+                            <span><i class="fas fa-star"></i> —</span>
+                            <span><i class="fas fa-code-branch"></i> —</span>
+                        </div>
+                    </div>
+                    <div class="repo-tags">
+                        <span class="rtag">FastAPI</span>
+                        <span class="rtag">OpenAI</span>
+                        <span class="rtag">LangChain</span>
+                        <span class="rtag">Slack Bot</span>
+                    </div>
+                </article>
+
+                <!-- Project 4: MLOps Infrastructure -->
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-brain"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">mlops-infra</h3>
+                            <span class="repo-visibility public">Internal</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        Reusable Terraform modules and Kubernetes manifests for ML model serving,
+                        training pipelines on EKS/ECS, feature store integration, and SageMaker endpoints.
+                    </p>
+                    <div class="repo-footer">
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#7B42BC"></span>
+                            <span>Terraform</span>
+                        </div>
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#326CE5"></span>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="repo-meta">
+                            <span><i class="fas fa-star"></i> —</span>
+                            <span><i class="fas fa-code-branch"></i> —</span>
+                        </div>
+                    </div>
+                    <div class="repo-tags">
+                        <span class="rtag">SageMaker</span>
+                        <span class="rtag">EKS</span>
+                        <span class="rtag">Kubeflow</span>
+                        <span class="rtag">Prometheus</span>
+                    </div>
+                </article>
+
+                <!-- Project 5: Serverless Data-Ops -->
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-server"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">serverless-dataops</h3>
+                            <span class="repo-visibility public">Internal</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        Serverless Data-Ops architecture with Lambda, S3, Redshift auto-ingestion pipelines,
+                        and automated SQL query generation. Reduced manual query time by 50%+.
+                    </p>
+                    <div class="repo-footer">
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#3776AB"></span>
+                            <span>Python</span>
+                        </div>
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#FF9900"></span>
+                            <span>AWS SAM</span>
+                        </div>
+                        <div class="repo-meta">
+                            <span><i class="fas fa-star"></i> —</span>
+                            <span><i class="fas fa-code-branch"></i> —</span>
+                        </div>
+                    </div>
+                    <div class="repo-tags">
+                        <span class="rtag">Lambda</span>
+                        <span class="rtag">Redshift</span>
+                        <span class="rtag">S3</span>
+                        <span class="rtag">Jenkins</span>
+                    </div>
+                </article>
+
+                <!-- Project 6: GitOps Delivery -->
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-code-branch"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">gitops-delivery</h3>
+                            <span class="repo-visibility public">Internal</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        ArgoCD-based GitOps delivery framework with app-of-apps pattern, environment promotion,
+                        sealed secrets, and drift detection across EKS and AKS clusters.
+                    </p>
+                    <div class="repo-footer">
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#326CE5"></span>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="repo-lang">
+                            <span class="lang-dot" style="background:#EF7B4D"></span>
+                            <span>ArgoCD</span>
+                        </div>
+                        <div class="repo-meta">
+                            <span><i class="fas fa-star"></i> —</span>
+                            <span><i class="fas fa-code-branch"></i> —</span>
+                        </div>
+                    </div>
+                    <div class="repo-tags">
+                        <span class="rtag">ArgoCD</span>
+                        <span class="rtag">EKS</span>
+                        <span class="rtag">AKS</span>
+                        <span class="rtag">Helm</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Architect: AWS Projects -->
+    <section class="solution-architect" id="solution-architect">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-project-diagram"></i> Solution Architect — AWS Projects</h2>
+                <span class="section-link">MLOps • ECS • DevOps workflows</span>
+            </div>
+            <div class="repo-grid">
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-brain"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">MLOps Model Training &amp; Serving</h3>
+                            <span class="repo-visibility internal">Solution</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        CI/CD for model training, model promotion, canary rollouts, and inference autoscaling. Implemented model observability and cost controls.
+                    </p>
+                    <div class="repo-tags">
+                        <span class="rtag">SageMaker</span>
+                        <span class="rtag">EKS</span>
+                        <span class="rtag">ECS</span>
+                        <span class="rtag">Prometheus</span>
+                    </div>
+                </article>
+
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-cubes-stacked"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">ECS Microservices &amp; Blue/Green Deploys</h3>
+                            <span class="repo-visibility internal">Solution</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        Migrated services to AWS ECS with blue/green and rolling deployments, integrated ALB traffic shifting and CodeDeploy for safe rollouts.
+                    </p>
+                    <div class="repo-tags">
+                        <span class="rtag">ECS</span>
+                        <span class="rtag">ALB</span>
+                        <span class="rtag">CodeDeploy</span>
+                        <span class="rtag">Terraform</span>
+                    </div>
+                </article>
+
+                <article class="repo-card">
+                    <div class="repo-header">
+                        <div class="repo-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="repo-title-row">
+                            <h3 class="repo-name">Automated DevOps Workflows &amp; Monitoring</h3>
+                            <span class="repo-visibility internal">Solution</span>
+                        </div>
+                    </div>
+                    <p class="repo-desc">
+                        Implemented GitHub Actions/Jenkins pipelines, GitOps with ArgoCD, and centralized monitoring + automated remediation playbooks to reduce MTTR.
+                    </p>
+                    <div class="repo-tags">
+                        <span class="rtag">GitHub Actions</span>
+                        <span class="rtag">ArgoCD</span>
+                        <span class="rtag">Prometheus</span>
+                        <span class="rtag">Grafana</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / README -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="readme-box">
+                <div class="readme-header">
+                    <span class="readme-filename"><i class="fas fa-book"></i> README.md</span>
+                </div>
+                <div class="readme-body">
+                    <h2>Hi there <span class="wave">👋</span></h2>
+                    <p>
+                        I'm a Senior Platform Engineer currently building internal platforms at
+                        <strong>Commonwealth Bank of Australia</strong>. I design and operate scalable
+                        multi-cloud infrastructure across <strong>AWS</strong> and <strong>Azure</strong>,
+                        with deep expertise in Kubernetes, Terraform, and GitOps.
+                    </p>
+                    <h3>What I'm working on</h3>
+                    <ul>
+                        <li>Multi-tenant <strong>Kafka-as-a-Service</strong> platform (1,000+ teams)</li>
+                        <li><strong>Container-as-a-Service</strong> on Amazon EKS with automated onboarding</li>
+                        <li><strong>AI chat agents</strong> for platform self-service operations</li>
+                        <li><strong>MLOps</strong> infrastructure for model serving and training pipelines</li>
+                    </ul>
+                    <h3>Previously</h3>
+                    <ul>
+                        <li>Led DevOps module at <strong>Happiest Minds</strong> — EKS, AKS, ArgoCD, Istio</li>
+                        <li>Built serverless Data-Ops at <strong>TCS</strong> — Lambda, Redshift, 50% time reduction</li>
+                        <li>Microservices on EKS/ECS at <strong>Wipro</strong> — Terraform, Cognito, Cloud Map</li>
+                    </ul>
+                    <h3>Certifications</h3>
+                    <p>
+                        <span class="badge">CKA</span>
+                        <span class="badge">AWS</span>
+                        <span class="badge">Azure</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            </div>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <div class="exp-org">
+                        <div class="exp-avatar">CBA</div>
+                        <div class="exp-info">
+                            <h4>Senior Platform Engineer</h4>
+                            <span class="exp-company">Commonwealth Bank of Australia</span>
+                            <span class="exp-date">Dec 2024 – Present · Bengaluru</span>
+                        </div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Architected multi-tenant <strong>Kafka-as-a-Service</strong> with automated topic/ACL/schema provisioning</li>
+                        <li>Built <strong>AI chat agent</strong> for natural language platform operations — reduced support tickets significantly</li>
+                        <li>Enabled <strong>1,000+ teams</strong> with self-service onboarding, cutting time by <strong>~45%</strong></li>
+                        <li>Designed <strong>CaaS on EKS</strong> with tenant isolation, NetworkPolicies, and resource quotas</li>
+                        <li>Migrated legacy CI/CD to <strong>GitHub Actions</strong> from TeamCity/Octopus</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Kafka</span><span>EKS</span><span>Terraform</span><span>Python</span><span>GitHub Actions</span><span>AI Agents</span>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-org">
+                        <div class="exp-avatar">HM</div>
+                        <div class="exp-info">
+                            <h4>DevOps Module Lead</h4>
+                            <span class="exp-company">Happiest Minds Technologies</span>
+                            <span class="exp-date">Apr 2023 – Dec 2024 · Bengaluru</span>
+                        </div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Led K8s & AWS admin for enterprise clients on <strong>EKS</strong> and <strong>AKS</strong></li>
+                        <li>Implemented <strong>GitOps</strong> with ArgoCD across dev/QA/prod environments</li>
+                        <li>Built observability stack — <strong>Prometheus, Grafana, Loki</strong> — MTTD down ~40%</li>
+                        <li>Owned serverless Salesforce integration — Lambda, API Gateway, SQS, SES — effort cut <strong>60%</strong></li>
+                        <li>Supported <strong>MLOps</strong> with model-serving infra on EKS/ECS</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>EKS</span><span>AKS</span><span>ArgoCD</span><span>Istio</span><span>Prometheus</span><span>Lambda</span>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-org">
+                        <div class="exp-avatar">TCS</div>
+                        <div class="exp-info">
+                            <h4>IT Analyst</h4>
+                            <span class="exp-company">Tata Consultancy Services</span>
+                            <span class="exp-date">Apr 2021 – Apr 2023 · Bengaluru</span>
+                        </div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Serverless <strong>Data-Ops</strong> architecture for automotive client — Lambda, S3, Redshift</li>
+                        <li>Automated SQL query pipelines — manual query time reduced <strong>50%+</strong></li>
+                        <li><strong>Jenkins + AWS SAM</strong> CI/CD for 45+ Lambda functions</li>
+                        <li>Integrated <strong>SonarQube, Trivy, OWASP ZAP</strong> into CI pipelines</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Lambda</span><span>Redshift</span><span>Jenkins</span><span>SAM</span><span>DevSecOps</span>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-org">
+                        <div class="exp-avatar">WP</div>
+                        <div class="exp-info">
+                            <h4>Project Engineer</h4>
+                            <span class="exp-company">Wipro Technologies</span>
+                            <span class="exp-date">Oct 2017 – Apr 2021 · Bengaluru</span>
+                        </div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Microservices on <strong>EKS & ECS (Fargate)</strong> with Terraform provisioning</li>
+                        <li>Secure auth with <strong>API Gateway, Lambda authorizers, Cognito</strong></li>
+                        <li>Supported <strong>MLOps</strong> teams with EKS/ECS environments for training/inference</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>EKS</span><span>ECS</span><span>Terraform</span><span>Cognito</span><span>MLOps</span>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-org">
+                        <div class="exp-avatar">CS</div>
+                        <div class="exp-info">
+                            <h4>Project Engineer</h4>
+                            <span class="exp-company">CSM Software Pvt Ltd</span>
+                            <span class="exp-date">Aug 2016 – Oct 2017 · Bengaluru</span>
+                        </div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Early cloud and DevOps initiatives — foundational IaC and automation experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="stack" id="stack">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-layer-group"></i> Tech Stack</h2>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-group">
+                    <h4><i class="fas fa-cloud"></i> Cloud</h4>
+                    <div class="stack-items">
+                        <span class="stack-item expert">AWS</span>
+                        <span class="stack-item expert">Azure</span>
+                        <span class="stack-item">EKS</span>
+                        <span class="stack-item">AKS</span>
+                        <span class="stack-item">ECS</span>
+                        <span class="stack-item">Lambda</span>
+                        <span class="stack-item">S3</span>
+                        <span class="stack-item">RDS</span>
+                        <span class="stack-item">Redshift</span>
+                        <span class="stack-item">DynamoDB</span>
+                        <span class="stack-item">VPC</span>
+                        <span class="stack-item">IAM</span>
+                        <span class="stack-item">API Gateway</span>
+                        <span class="stack-item">SageMaker</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h4><i class="fas fa-dharmachakra"></i> Containers</h4>
+                    <div class="stack-items">
+                        <span class="stack-item expert">Kubernetes</span>
+                        <span class="stack-item expert">Docker</span>
+                        <span class="stack-item">Helm</span>
+                        <span class="stack-item">Istio</span>
+                        <span class="stack-item">NGINX Ingress</span>
+                        <span class="stack-item">NetworkPolicies</span>
+                        <span class="stack-item">ECR</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h4><i class="fas fa-code"></i> IaC</h4>
+                    <div class="stack-items">
+                        <span class="stack-item expert">Terraform</span>
+                        <span class="stack-item">Ansible</span>
+                        <span class="stack-item">CloudFormation</span>
+                        <span class="stack-item">AWS SAM</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h4><i class="fas fa-rotate"></i> CI/CD</h4>
+                    <div class="stack-items">
+                        <span class="stack-item expert">GitHub Actions</span>
+                        <span class="stack-item">Jenkins</span>
+                        <span class="stack-item">Azure DevOps</span>
+                        <span class="stack-item">ArgoCD</span>
+                        <span class="stack-item">GitLab</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h4><i class="fas fa-eye"></i> Observability</h4>
+                    <div class="stack-items">
+                        <span class="stack-item">Prometheus</span>
+                        <span class="stack-item">Grafana</span>
+                        <span class="stack-item">Loki</span>
+                        <span class="stack-item">ELK/EFK</span>
+                        <span class="stack-item">CloudWatch</span>
+                        <span class="stack-item">X-Ray</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h4><i class="fas fa-lock"></i> Security</h4>
+                    <div class="stack-items">
+                        <span class="stack-item">SonarQube</span>
+                        <span class="stack-item">Trivy</span>
+                        <span class="stack-item">OWASP ZAP</span>
+                        <span class="stack-item">AquaSec</span>
+                        <span class="stack-item">WAF</span>
+                        <span class="stack-item">Secrets Manager</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h4><i class="fas fa-terminal"></i> Languages</h4>
+                    <div class="stack-items">
+                        <span class="stack-item">Python</span>
+                        <span class="stack-item">Bash</span>
+                        <span class="stack-item">FastAPI</span>
+                        <span class="stack-item">SQL</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <h4><i class="fas fa-database"></i> Data</h4>
+                    <div class="stack-items">
+                        <span class="stack-item">RDS</span>
+                        <span class="stack-item">Redshift</span>
+                        <span class="stack-item">DynamoDB</span>
+                        <span class="stack-item">Azure SQL</span>
+                        <span class="stack-item">Kafka</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-comment"></i> Get in touch</h2>
+            </div>
+            <div class="contact-box">
+                <div class="contact-row">
+                    <div class="contact-cell">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:arjun.betageri@live.com" class="contact-value">arjun.betageri@live.com</a>
+                    </div>
+                    <div class="contact-cell">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+918747030006" class="contact-value">+91 87470 30006</a>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-cell">
+                        <span class="contact-label">Location</span>
+                        <span class="contact-value">Bengaluru, Karnataka, India</span>
+                    </div>
+                    <div class="contact-cell">
+                        <span class="contact-label">Social</span>
+                        <div class="contact-socials">
+                            <a href="https://linkedin.com/in/arjunkumar-betageri" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/arjunkumar-betageri" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Arjunkumar Betageri · Senior Platform Engineer · CKA</p>
+            <p class="footer-sub">Built for GitHub Pages · No frameworks, no trackers</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
 </html>
